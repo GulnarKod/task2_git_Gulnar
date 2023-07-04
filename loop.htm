@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //Задание 1.
+       function myFunction(a,b){
+        let sum = 0;
+        let count = 0
+        for(let i=a; i<=b;i++){
+            if(i % 2===0){
+           sum +=i; 
+           count++;
+            }  
+        }
+        console.log("Сумма четных чисел в диапазоне равна: "+sum);
+        console.log("Количество четных чисел в диапазоне равно: "+count);
+       } 
+       myFunction(4,9);
+
+
+     //Задание 2.
+
+        function isPrime(num){
+            let result ='';
+           for(let i=2; i <= Math.sqrt(num);i++){
+            if( num % i === 0){
+              return false;
+            } 
+        }
+                return num>1;
+            }  
+        console.log(isPrime(18));
+        console.log(isPrime(23));
+
+     //Задание 3.
+
+        function getSqrtByBinarySearch(number){
+            let first = 1;
+            let last = number;
+            let middle;
+            let sqrt;
+            while ( first<=last){
+                middle = Math.floor((first+last)/2);
+                if ( middle * middle===number){
+                    return middle;
+                }else 
+                if( middle * middle < number ){
+                    first =middle +1; 
+                 sqrt = middle;
+                } else {
+                    last = middle -1;   
+                }
+                }
+                return sqrt;
+            }
+        console.log(getSqrtByBinarySearch(144));
+    
+        //Задание 4. 
+
+          function getFactorial(n){
+         let factorial=1;
+         while(n){
+        factorial *=n--;
+         }
+         return factorial;
+         }
+         console.log(getFactorial(13));
+
+        //Задание 5.
+
+         function digitSum(y){
+            let result = 0;
+            let str = String(y);
+            for(let i=0; i<str.length; i++){
+                result += Number(str[i]);
+            }
+            return result;  
+         }
+         console.log(digitSum(569));
+    </script>
+</body>
+</html>
